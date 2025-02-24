@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #050a18;
+    --text-color: #8892b0;
+    --highlight-color: #64ffda;
+    --secondary-color: #0d1526;
+    --header-color: #ccd6f6;
+    --code-red: #ff5f56;
+    --code-yellow: #ffbd2e;
+    --code-green: #27c93f;
+}
+
+body {
+    font-family: 'Fira Code', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+.code-tag {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--header-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.typing-text {
+    margin-bottom: 2rem;
+}
+
+.code-comment {
+    color: #4a5568;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.const {
+    color: #ff79c6;
+}
+
+.string {
+    color: #f1fa8c;
+}
+
+.code-block {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 2rem;
+    background-color: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.code-block::before {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--code-red);
+    box-shadow: 
+        20px 0 0 var(--code-yellow),
+        40px 0 0 var(--code-green);
+}
+
+.code-line {
+    margin: 0.5rem 0;
+}
+
+.keyword {
+    color: #ff79c6;
+}
+
+.class-name {
+    color: #50fa7b;
+}
+
+.indent {
+    margin-left: 2rem;
+}
+
+.double-indent {
+    margin-left: 4rem;
+}
+
+section {
+    padding: 8rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--header-color);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    background-color: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-header i {
+    color: var(--highlight-color);
+}
+
+.project-header h3 {
+    color: var(--header-color);
+}
+
+.tech-stack {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.tech-stack span {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--highlight-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    color: var(--highlight-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.copyright {
+    color: #f1fa8c;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .code-block {
+        font-size: 0.9rem;
+    }
+}
+
+.about-section {
+    background-color: var(--bg-color);
+    padding: 8rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+.code-editor {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.editor-header {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dots span:nth-child(1) {
+    background-color: var(--code-red);
+}
+
+.dots span:nth-child(2) {
+    background-color: var(--code-yellow);
+}
+
+.dots span:nth-child(3) {
+    background-color: var(--code-green);
+}
+
+.file-name {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.editor-content {
+    padding: 2rem;
+    font-family: 'Fira Code', monospace;
+    line-height: 1.8;
+}
+
+.line-number {
+    color: #4a5568;
+    margin-right: 1rem;
+    user-select: none;
+}
+
+.editor-content p {
+    display: flex;
+    white-space: pre-wrap;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .editor-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .line-number {
+        margin-right: 0.5rem;
+    }
+}
+
+/* Arka plan desenleri için yeni CSS */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238892b0' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-element {
+    position: absolute;
+    opacity: 0.08;
+    animation: float 20s infinite linear;
+    color: var(--text-color);
+}
+
+.floating-element:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    font-size: 2rem;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    top: 70%;
+    left: 80%;
+    font-size: 1.5rem;
+    animation-delay: -3s;
+}
+
+.floating-element:nth-child(3) {
+    top: 40%;
+    left: 40%;
+    font-size: 1.8rem;
+    animation-delay: -6s;
+}
+
+.floating-element:nth-child(4) {
+    top: 20%;
+    left: 90%;
+    font-size: 2.2rem;
+    animation-delay: -9s;
+}
+
+.floating-element:nth-child(5) {
+    top: 80%;
+    left: 20%;
+    font-size: 1.7rem;
+    animation-delay: -12s;
+}
+
+.floating-element:nth-child(6) {
+    top: 30%;
+    left: 60%;
+    font-size: 2.4rem;
+    animation-delay: -15s;
+}
+
+.floating-element:nth-child(7) {
+    top: 60%;
+    left: 30%;
+    font-size: 1.6rem;
+    animation-delay: -18s;
+}
+
+.floating-element:nth-child(8) {
+    top: 90%;
+    left: 70%;
+    font-size: 2rem;
+    animation-delay: -21s;
+}
+
+.floating-element:nth-child(9) {
+    top: 15%;
+    left: 50%;
+    font-size: 1.9rem;
+    animation-delay: -24s;
+}
+
+.floating-element:nth-child(10) {
+    top: 50%;
+    left: 15%;
+    font-size: 1.8rem;
+    animation-delay: -27s;
+}
+
+.floating-element:nth-child(11) {
+    top: 75%;
+    left: 45%;
+    font-size: 2.1rem;
+    animation-delay: -30s;
+}
+
+.floating-element:nth-child(12) {
+    top: 35%;
+    left: 85%;
+    font-size: 1.7rem;
+    animation-delay: -33s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0.1;
+    }
+}
+
+/* Mevcut section'ların z-index'ini güncelle */
+.hero, .about-section, .project-grid, #iletisim {
+    position: relative;
+    z-index: 1;
+}
+
+/* Container'ların arka planını hafif şeffaf yap */
+.code-block, .code-editor, .project-card {
+    background-color: rgba(17, 34, 64, 0.8);
+    backdrop-filter: blur(5px);
+} 
