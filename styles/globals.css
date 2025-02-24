@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ek stil tanımlamaları buraya gelebilir */
+body {
+  @apply bg-gray-900;
+  background-image: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 0.5rem;
+  background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+  padding: 1px;
+}
+
+.gradient-border > div {
+  background: #111827;
+  border-radius: 0.5rem;
+} 
